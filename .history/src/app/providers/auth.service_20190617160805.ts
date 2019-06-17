@@ -20,22 +20,19 @@ export class AuthService {
 
 
   login(credentials) {
-    return this.http.post(`${this.url}/auth/login`, credentials)
+    return this.http.post(`${this.url}/login`, credentials)
     .pipe(
       tap((res: any) => {
         this.setToken(res['token']);
-        this.setCompanyId(res['company_id']);
         this.router.navigate(['/home']);
         return true;
       }),
       catchError(e => {
-        /*
         if(e.error.message) {
           console.log(e.error.message);
         } else {
           console.log('로그인실패');
         }
-        */
         throw new Error(e);
       })
     );
@@ -43,7 +40,6 @@ export class AuthService {
 
   logout(): void {
     this.removeToken();
-    this.removeCompanyId();
   }
 
   isAuthenticated(): boolean {
@@ -64,16 +60,15 @@ export class AuthService {
   }
 
   setCompanyId(_id: string): void {
-    localStorage.setItem(this.COMPANY_ID, _id);
+    localStorage.set(this.COMPANY_ID, _id);
   }
 
-  getCompnayId(): string {
-    return localStorage.getItem(this.COMPANY_ID);
+  getCompnayId() {
 
   }
 
   removeCompanyId() {
-    localStorage.removeItem(this.COMPANY_ID);
+
   }
   
   

@@ -64,7 +64,7 @@ export class AuthService {
   }
 
   setCompanyId(_id: string): void {
-    localStorage.setItem(this.COMPANY_ID, _id);
+    localStorage.set(this.COMPANY_ID, _id);
   }
 
   getCompnayId(): string {

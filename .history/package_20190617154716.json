@@ -56,7 +56,6 @@
     "@types/jasminewd2": "2.0.3",
     "@types/mocha": "5.2.6",
     "@types/node": "8.9.4",
-    "bootstrap": "^4.3.1",
     "chai": "4.2.0",
     "codelyzer": "5.0.1",
     "conventional-changelog-cli": "2.0.11",
@@ -84,8 +83,5 @@
   },
   "engines": {
     "node": ">=10.9.0"
-  },
-  "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^4.2.1"
   }
 }

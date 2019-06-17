@@ -29,13 +29,11 @@ export class AuthService {
         return true;
       }),
       catchError(e => {
-        /*
         if(e.error.message) {
           console.log(e.error.message);
         } else {
           console.log('로그인실패');
         }
-        */
         throw new Error(e);
       })
     );
@@ -64,7 +62,7 @@ export class AuthService {
   }
 
   setCompanyId(_id: string): void {
-    localStorage.setItem(this.COMPANY_ID, _id);
+    localStorage.set(this.COMPANY_ID, _id);
   }
 
   getCompnayId(): string {
