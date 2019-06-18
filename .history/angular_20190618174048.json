@@ -25,6 +25,7 @@
               "src/favicon.512x512.png"
             ],
             "styles": [
+              "src/styles.scss",
               "src/styles/app.scss"
             ],
             "scripts": []
