@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
     const companyId = this.authService.getCompnayId();
     this.getapi.getRealtime(companyId).subscribe((res: any) => {
       this.tanks = res;
-      console.log(res);
       
     });
   }

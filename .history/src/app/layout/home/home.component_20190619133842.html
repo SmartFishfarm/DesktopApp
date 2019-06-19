@@ -1,15 +1,15 @@
 <div>
+  <!--
+  <img src="assets/img/tank_blue.png" width="150px" class="user-avatar" />
+
+   -->
+
     <div class="row">
         <div class="col-xl-3 text-xs-center" *ngFor="let tank of tanks">
             <div class="card mb-3">
                 <div class="card-body">
-                    
                     <label>{{tank.name_tag}}</label>
-        
-                    <img src="assets/img/tank_blue.png" width="150px" class="user-avatar" />
 
-                    <label>용존산소: {{ tank.value }}{{tank.unit}}</label><br />
-                    <label [hidden]="!tank.ph">수소이온: {{ tank.ph }}pH</label><br />
                     <label>온도: {{ tank.temp }}°C</label><br />
                     <label>업데이트: {{ tank.timestamp }}</label><br />
                     

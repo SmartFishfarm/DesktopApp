@@ -10,7 +10,7 @@ import { GetApiService } from '../../providers/get-api.service';
 export class HomeComponent implements OnInit {
 
   private interval = null;
-  tanks: any;
+  tank: any;
 
   constructor(
     private getapi: GetApiService,
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   getRealtime(){
     const companyId = this.authService.getCompnayId();
     this.getapi.getRealtime(companyId).subscribe((res: any) => {
-      this.tanks = res;
+      this.tank = res;
       console.log(res);
       
     });
