@@ -48,6 +48,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  
+
+
   onLoggedout() {
     this.authService.logout();
   }

@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
 
   private interval = null;
   tanks: any;
-  limits: any;
 
   constructor(
     private getapi: GetApiService,
@@ -37,20 +36,18 @@ export class HomeComponent implements OnInit {
   
   getRealtime(){
     const companyId = this.authService.getCompanyId();
-    const userId = this.authService.getUserId();
-
     this.getapi.getRealtime(companyId).subscribe((res: any) => {
       this.tanks = res;
-    });
-
-    this.getapi.getAllLimits(userId).subscribe((res: any) => { 
-      this.limits = res;
+      //console.log(res);
+      
     });
   }
+
 
   onLoggedout() {
     this.authService.logout();
-  }
+
+}
   
   
  

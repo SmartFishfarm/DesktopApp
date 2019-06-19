@@ -27,7 +27,6 @@ export class AuthService {
       tap((res: any) => {
         this.setToken(res['token']);
         this.setCompanyId(res['company_id']);
-        this.setUserId(res['user_id']);
         this.router.navigate(['/home']);
         return true;
       }),
@@ -47,7 +46,6 @@ export class AuthService {
   logout(): void {
     this.removeToken();
     this.removeCompanyId();
-    this.removeUserId();
   }
 
   isAuthenticated(): boolean {
@@ -71,25 +69,15 @@ export class AuthService {
     localStorage.setItem(this.COMPANY_ID, _id);
   }
 
-  getCompanyId(): string {
+  getCompnayId(): string {
     return localStorage.getItem(this.COMPANY_ID);
+
   }
 
   removeCompanyId() {
     localStorage.removeItem(this.COMPANY_ID);
   }
   
-  setUserId(_id: string): void {
-    localStorage.setItem(this.USER_ID, _id);
-  }
-
-  getUserId(): string {
-    return localStorage.getItem(this.USER_ID);
-  }
-
-  removeUserId() {
-    localStorage.removeItem(this.USER_ID);
-  }
   
 
 }

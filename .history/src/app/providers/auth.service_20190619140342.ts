@@ -47,7 +47,6 @@ export class AuthService {
   logout(): void {
     this.removeToken();
     this.removeCompanyId();
-    this.removeUserId();
   }
 
   isAuthenticated(): boolean {

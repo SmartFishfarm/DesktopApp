@@ -6,19 +6,19 @@
                     
                     <label>{{tank.name_tag}}</label>
         
-                    
-                    <ng-container [ngSwitch]="true">
-                        <div *ngSwitchCase="tank.value < 5">
-                            <img src="assets/img/tank_red.png" width="150px" />                        
+                    <!--
+                    <ng-container [ngSwitch]="sensor.state">
+                        <div *ngSwitchCase="00">
                         </div>
-                        <div *ngSwitchCase="tank.value > 13">
-                            <img src="assets/img/tank_yellow.png" width="150px" />
+                        <div *ngSwitchCase="02">
+                        </div>
+                        <div *ngSwitchCase="03">
                         </div>
                         <div *ngSwitchDefault>
-                            <img src="assets/img/tank_blue.png" width="150px" />                        
+                            <img src="assets/img/tank_blue.png" width="150px" class="user-avatar" />                        
                         </div>
                     </ng-container>
-                    
+                    -->
 
                     <label>용존산소: {{ tank.value }}{{tank.unit}}</label><br />
                     <label [hidden]="!tank.ph">수소이온: {{ tank.ph }}pH</label><br />

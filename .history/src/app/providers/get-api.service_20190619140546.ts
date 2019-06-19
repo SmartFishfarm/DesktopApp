@@ -35,15 +35,8 @@ export class GetApiService {
   }
 
 
-  getAllLimits(userid) {
-    return this.http.get(`${this.url}/all-limits/${userid}`, { headers: this.headers }).pipe(
-      map((res: any) => {
-        return res;
-      }),
-      catchError(e => {
-        throw new Error(e);
-      })
-    );
+  getAllLimits() {
+    
   }
 
 

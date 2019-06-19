@@ -27,7 +27,7 @@ export class AuthService {
       tap((res: any) => {
         this.setToken(res['token']);
         this.setCompanyId(res['company_id']);
-        this.setUserId(res['user_id']);
+        this.setUserId(res['usr_id']);
         this.router.navigate(['/home']);
         return true;
       }),
@@ -47,7 +47,6 @@ export class AuthService {
   logout(): void {
     this.removeToken();
     this.removeCompanyId();
-    this.removeUserId();
   }
 
   isAuthenticated(): boolean {
