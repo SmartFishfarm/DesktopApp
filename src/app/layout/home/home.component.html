@@ -2,29 +2,57 @@
     <div class="row">
         <div class="col-xl-3 text-xs-center" *ngFor="let tank of tanks">
             <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-header" style="font-weight: bolder">{{tank.name_tag}}</div>
+                <div class="card-body"> 
                     
-                    <label>{{tank.name_tag}}</label>
-        
-                    
-                    <ng-container [ngSwitch]="true">
-                        <div *ngSwitchCase="tank.value < 5">
-                            <img src="assets/img/tank_red.png" width="150px" />                        
+                    <!--
+                    <ng-container [ngSwitch]="true" *ngFor="let limit of limits">
+                        <div *ngSwitchCase="tank.value < limit.min">
+                            <img src="assets/img/tank_red.png" width="200px" />                        
                         </div>
-                        <div *ngSwitchCase="tank.value > 13">
-                            <img src="assets/img/tank_yellow.png" width="150px" />
+                        <div *ngSwitchCase="tank.value > limit.max">
+                            <img src="assets/img/tank_red.png" width="200px" />
                         </div>
                         <div *ngSwitchDefault>
-                            <img src="assets/img/tank_blue.png" width="150px" />                        
+                            <img src="assets/img/tank_blue.png" width="200px" />                        
                         </div>
                     </ng-container>
-                    
+                    -->
+                    <div class="row">
+                            <div class="col-xl-12 text-xs-center">
+                                    <ng-container [ngSwitch]="true" *ngFor="let limit of limits">
+                                    <div *ngSwitchCase="tank.value < limit.min">
+                                        <img src="assets/img/tank_red.png" width="200px" />                        
+                                    </div>
+                                    <div *ngSwitchCase="tank.value > limit.max">
+                                        <img src="assets/img/tank_red.png" width="200px" />
+                                    </div>
+                                    <div *ngSwitchDefault>
+                                        <img src="assets/img/tank_blue.png" width="200px" />                        
+                                    </div>
+                                </ng-container>
+                            </div>
+                    </div>
 
-                    <label>용존산소: {{ tank.value }}{{tank.unit}}</label><br />
-                    <label [hidden]="!tank.ph">수소이온: {{ tank.ph }}pH</label><br />
-                    <label>온도: {{ tank.temp }}°C</label><br />
-                    <label>업데이트: {{ tank.timestamp }}</label><br />
-                    
+                    <div class="row">
+                        <div class="col-xl-12 text-xs-center">
+                            <p class="text-center" style="font-weight: bolder; font-size: xx-large">{{ tank.value }}{{tank.unit}}</p>                            
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="tank.ph">
+                        <div class="col-xl-12 text-xs-center">
+                            <p class="text-center" style="font-weight: bolder; font-size: x-large">{{ tank.temp }}°C</p>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="!tank.ph">
+                        <div class="col-xl-6 text-xs-center">
+                            <p class="text-center" style="font-weight: bolder; font-size: x-large">{{ tank.temp }}°C</p>
+                        </div>
+                        <div class="col-xl-6 text-xs-center">
+                            <p class="text-center" style="font-weight: bolder; font-size: x-large">{{ tank.ph }}pH</p>                            
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

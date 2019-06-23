@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="form-group">
+        <div class="card mb-3">
+            <div class="card-header">설정</div>
+            <div class="card-body table-responsive">
+                <table class="table table-bordered">
+                  <tbody *ngFor="let limit of limits">
+                    <tr>
+                      <td>최대범위</td>
+                      <td>{{limit.max}}mg/L</td>
+                      
+                    
+                    </tr>
+                    <tr>
+                      <td>최소범위</td>
+                      <td>{{limit.min}}mg/L</td>
+                    </tr>          
+                  </tbody>
+                </table>
+            </div>  
+        </div>
+    </div>
+</div>

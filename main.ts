@@ -20,6 +20,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    icon: `${__dirname}/src/assets/img/desktop.png`
+
   });
 
   if (serve) {

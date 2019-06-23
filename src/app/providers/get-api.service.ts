@@ -35,8 +35,8 @@ export class GetApiService {
   }
 
 
-  getAllLimits(userid) {
-    return this.http.get(`${this.url}/all-limits/${userid}`, { headers: this.headers }).pipe(
+  getDesktopLimits(id) {
+    return this.http.get(`${this.url}/desktop-limits/${id}`, { headers: this.headers }).pipe(
       map((res: any) => {
         return res;
       }),
@@ -45,6 +45,8 @@ export class GetApiService {
       })
     );
   }
+
+
 
 
 

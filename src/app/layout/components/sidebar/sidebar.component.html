@@ -4,7 +4,11 @@
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
-        
+        <a routerLink="/settings" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-gear"></i>&nbsp;
+            <span>{{ 'Settings' | translate }}</span>
+        </a>
+
         <div class="header-fields">
             <div class="nested-menu">
                 <a class="list-group-item" (click)="addExpandClass('languages')">
