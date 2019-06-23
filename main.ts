@@ -19,10 +19,10 @@ function createWindow() {
     height: size.height,
     webPreferences: {
       nodeIntegration: true,
-    },
-    icon: `${__dirname}/src/assets/img/desktop.png`
-
+    }
   });
+
+  win.setIcon(`${__dirname}/src/assets/img/desktop.png`);
 
   if (serve) {
     require('electron-reload')(__dirname, {

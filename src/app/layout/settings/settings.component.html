@@ -1,23 +1,17 @@
-<div class="row">
     <div class="form-group">
-        <div class="card mb-3">
-            <div class="card-header">설정</div>
-            <div class="card-body table-responsive">
-                <table class="table table-bordered">
-                  <tbody *ngFor="let limit of limits">
-                    <tr>
-                      <td>최대범위</td>
-                      <td>{{limit.max}}mg/L</td>
-                      
-                    
-                    </tr>
-                    <tr>
-                      <td>최소범위</td>
-                      <td>{{limit.min}}mg/L</td>
-                    </tr>          
-                  </tbody>
-                </table>
-            </div>  
+      <div class="row">
+        <div class="col-lg-12" *ngFor="let limit of limits">
+            <hr>
+            <div class="form-group">
+                <label style="font-weight: bolder">최대범위</label>&nbsp;&nbsp;
+                <label>{{limit.max}}mg/L</label>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label style="font-weight: bolder">최소범위</label>&nbsp;&nbsp;
+                <label>{{limit.min}}mg/L</label>
+                <i class="fa fa-edit" style="zoom:1.5;" (click)="open(editCompany)"></i>
+            </div>
         </div>
+      </div>
     </div>
-</div>
